@@ -3,53 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <title>Instagram App</title>
-  <link href="./css/main.css" rel="stylesheet" type="text/css" />
+  <link href="./css/styles.css" rel="stylesheet" type="text/css" />
   <script src="./js/index.js"></script>
 </head>
 <body>
   <h1>Instagram App</h1>
-  <div id="fb-root"></div>
-  <script>
-    // Inicializar el SDK de Facebook
-    FB.init({
-      appId: "[TU_CLIENT_ID]",
-      cookie: true,
-      xfbml: true,
-      version: "v13.0"
-    });
-
-    // Evento de clic del botón de inicio de sesión
-    document.querySelector("#login").addEventListener("click", () => {
-      FB.login(function(response) {
-        if (response.status === "connected") {
-          // El usuario está conectado
-        } else {
-          // El usuario no está conectado
-        }
-      });
-    });
-
-    // Evento de clic del botón de envío
-    document.querySelector("form").addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      // Si el usuario no está conectado, solicita el inicio de sesión
-      if (!FB.getLoginStatus().status === "connected") {
-        FB.login(function(response) {
-          if (response.status === "connected") {
-            postComment(url, followers);
-          }
-        });
-
-        return;
-      }
-
-      // El usuario está conectado, procede con el envío del comentario
-      const url = event.target.querySelector("input[name=url]").value;
-      const followers = event.target.querySelector("input[name=followers]").value;
-
-      postComment(url, followers);
-    });
-  </script>
+  <form action="/" method="post" class="form">
+    <input type="text" name="url" placeholder="URL de la publicación" class="input-text">
+    <input type="number" name="followers" placeholder="Número de seguidores" class="input-number">
+    <input type="submit" value="Enviar" class="button">
+  </form>
 </body>
 </html>
