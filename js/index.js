@@ -13,7 +13,7 @@ FB.init({
 var loginButton = document.createElement("button");
 loginButton.setAttribute("id", "login");
 loginButton.setAttribute("class", "btn btn-primary");
-loginButton.setAttribute("data-href", "https://www.facebook.com/dialog/oauth?client_id=[TU_CLIENT_ID]&redirect_uri=https://www.example.com/");
+loginButton.setAttribute("data-href", "https://www.facebook.com/dialog/oauth?client_id=[283465684544034]&redirect_uri=https://www.example.com/");
 loginButton.innerHTML = "Iniciar sesión con Facebook";
 
 // Agrega el botón al documento
