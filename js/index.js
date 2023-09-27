@@ -3,7 +3,7 @@
 
 // Inicializa el código JavaScript de Facebook
 FB.init({
-  appId: "[TU_CLIENT_ID]",
+  appId: "[283465684544034]",
   cookie: true,
   xfbml: true,
   version: "v13.0"
