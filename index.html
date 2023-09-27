@@ -1,33 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <title>Inicio de sesión con Facebook</title>
+  <meta charset="UTF-8">
+  <title>Botón personalizado</title>
 </head>
 <body>
-  <h1>Inicio de sesión con Facebook</h1>
-  <a href="https://www.facebook.com/dialog/oauth?client_id=283465684544034&response_type=code&scope=email&redirect_uri=https://www.example.com/facebook_login" onclick="myFunction()">
-    <img src="https://www.facebook.com/images/fb_icon_32.png" alt="Iniciar sesión con Facebook">
-  </a>
-
-  <script>
-    function myFunction() {
-      // Haz algo cuando se haga clic en el botón
-      // Volver a la página inicial
-      window.location.href = "https://instasorteoswin.netlify.app/";
-    }
-
-    // Función para volver a la página principal al iniciar sesión
-    function onLoginSuccess() {
-      window.location.href = "https://instasorteoswin.netlify.app/";
-    }
-
-    // Obtener el token de acceso de Facebook
-    FB.login(function(response) {
-      if (response.status === "connected") {
-        // Iniciar sesión con éxito
-        // Llamar a la función onLoginSuccess()
-        onLoginSuccess();
-      }
-    }, {scope: "email"});
-  </script>
+  <h1>Botón personalizado</h1>
+  <button class="boton">Iniciar sesión</button>
 </body>
 </html>
