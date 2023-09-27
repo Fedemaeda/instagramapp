@@ -1,44 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Instagram App</title>
 </head>
 <body>
-    const instagram = new Instagram({
-        clientId: "[TU_CLIENT_ID]",
-        clientSecret: "[TU_CLIENT_SECRET]",
-        redirectUri: "[TU_REDIRECT_URI]"
-      });
-      
-      function getAccessToken() {
-        instagram.login().then(response => {
-          const accessToken = response.accessToken;
-      
-          // Procesa el token de acceso
-        });
-      }
-      
-      function postComment(url, followers) {
-        instagram.postComment(url, followers).then(response => {
-          // Procesa la respuesta
-        });
-      }
-      
-      // Eventos
-      
-      document.querySelector("form").addEventListener("submit", (event) => {
-        event.preventDefault();
-      
-        const url = event.target.querySelector("input[name=url]").value;
-        const followers = event.target.querySelector("input[name=followers]").value;
-      
-        getAccessToken().then(() => {
-          postComment(url, followers);
-        });
-      });
-      
+  <h1>Instagram App</h1>
+  <form action="/" method="post">
+    <input type="text" name="url" placeholder="URL de la publicación">
+    <input type="number" name="followers" placeholder="Número de seguidores">
+    <input type="submit" value="Enviar">
+  </form>
 </body>
 </html>
