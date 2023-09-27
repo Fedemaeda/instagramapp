@@ -1,41 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Instagram App</title>
-  <link href="./css/styles.css" rel="stylesheet" type="text/css" />
+  <title>Inicio de sesión con Facebook</title>
 </head>
 <body>
-  <h1>Instagram App</h1>
-  <form action="/" method="post" class="form">
-    <input type="text" name="url" placeholder="URL de la publicación" class="input-text">
-    <input type="number" name="followers" placeholder="Número de seguidores" class="input-number">
-    <input type="submit" value="Enviar" class="button">
-  </form>
+  <h1>Inicio de sesión con Facebook</h1>
+  <a href="https://www.facebook.com/dialog/oauth?client_id=283465684544034&response_type=code&scope=email&redirect_uri=https://www.example.com/facebook_login" onclick="myFunction()">
+    <img src="https://www.facebook.com/images/fb_icon_32.png" alt="Iniciar sesión con Facebook">
+  </a>
 
-  <!-- Importa el código JavaScript de Facebook -->
-  <script src="https://connect.facebook.net/en_US/sdk.js"></script>
-
-  <!-- Inicializa el código JavaScript de Facebook -->
   <script>
-    FB.init({
-      appId: "283465684544034",
-      cookie: true,
-      xfbml: true,
-      version: "v13.0"
-    });
+    function myFunction() {
+      // Haz algo cuando se haga clic en el botón
+    }
   </script>
-
-  <!-- Crea el botón de inicio de sesión -->
-  <script>
-    var loginButton = document.createElement("button");
-    loginButton.setAttribute("id", "login");
-    loginButton.setAttribute("class", "btn btn-primary");
-    loginButton.setAttribute("data-href", "https://www.facebook.com/dialog/oauth?client_id=283465684544034&redirect_uri=https://www.example.com/");
-    loginButton.innerHTML = "Iniciar sesión con Facebook";
-
-    document.body.appendChild(loginButton);
-  </script>
-
 </body>
 </html>
