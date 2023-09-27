@@ -14,6 +14,20 @@
       // Volver a la página inicial
       window.location.href = "/";
     }
+
+    // Función para volver a la página principal al iniciar sesión
+    function onLoginSuccess() {
+      window.location.href = "/";
+    }
+
+    // Obtener el token de acceso de Facebook
+    FB.login(function(response) {
+      if (response.status === "connected") {
+        // Iniciar sesión con éxito
+        // Llamar a la función onLoginSuccess()
+        onLoginSuccess();
+      }
+    }, {scope: "email"});
   </script>
 </body>
 </html>
