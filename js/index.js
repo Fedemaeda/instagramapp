@@ -1,33 +1,20 @@
-const instagram = new Instagram({
-    clientId: "[TU_CLIENT_ID]",
-    clientSecret: "[TU_CLIENT_SECRET]",
-    redirectUri: "[TU_REDIRECT_URI]"
-  });
-  
-  function getAccessToken() {
-    instagram.login().then(response => {
-      const accessToken = response.accessToken;
-  
-      // Procesa el token de acceso
-    });
-  }
-  
-  function postComment(url, followers) {
-    instagram.postComment(url, followers).then(response => {
-      // Procesa la respuesta
-    });
-  }
-  
-  // Eventos
-  
-  document.querySelector("form").addEventListener("submit", (event) => {
-    event.preventDefault();
-  
-    const url = event.target.querySelector("input[name=url]").value;
-    const followers = event.target.querySelector("input[name=followers]").value;
-  
-    getAccessToken().then(() => {
-      postComment(url, followers);
-    });
-  });
-  
+// Importa el código JavaScript de Facebook
+<script src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+// Inicializa el código JavaScript de Facebook
+FB.init({
+  appId: "[TU_CLIENT_ID]",
+  cookie: true,
+  xfbml: true,
+  version: "v13.0"
+});
+
+// Crea el botón de inicio de sesión
+var loginButton = document.createElement("button");
+loginButton.setAttribute("id", "login");
+loginButton.setAttribute("class", "btn btn-primary");
+loginButton.setAttribute("data-href", "https://www.facebook.com/dialog/oauth?client_id=[TU_CLIENT_ID]&redirect_uri=https://www.example.com/");
+loginButton.innerHTML = "Iniciar sesión con Facebook";
+
+// Agrega el botón al documento
+document.body.appendChild(loginButton);

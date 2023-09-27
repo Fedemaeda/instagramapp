@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <title>Instagram App</title>
   <link href="./css/styles.css" rel="stylesheet" type="text/css" />
-  <script src="./js/index.js"></script>
 </head>
 <body>
   <h1>Instagram App</h1>
@@ -13,5 +12,30 @@
     <input type="number" name="followers" placeholder="Número de seguidores" class="input-number">
     <input type="submit" value="Enviar" class="button">
   </form>
+
+  <!-- Importa el código JavaScript de Facebook -->
+  <script src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+  <!-- Inicializa el código JavaScript de Facebook -->
+  <script>
+    FB.init({
+      appId: "[TU_CLIENT_ID]",
+      cookie: true,
+      xfbml: true,
+      version: "v13.0"
+    });
+  </script>
+
+  <!-- Crea el botón de inicio de sesión -->
+  <script>
+    var loginButton = document.createElement("button");
+    loginButton.setAttribute("id", "login");
+    loginButton.setAttribute("class", "btn btn-primary");
+    loginButton.setAttribute("data-href", "https://www.facebook.com/dialog/oauth?client_id=[TU_CLIENT_ID]&redirect_uri=https://www.example.com/");
+    loginButton.innerHTML = "Iniciar sesión con Facebook";
+
+    document.body.appendChild(loginButton);
+  </script>
+
 </body>
 </html>
